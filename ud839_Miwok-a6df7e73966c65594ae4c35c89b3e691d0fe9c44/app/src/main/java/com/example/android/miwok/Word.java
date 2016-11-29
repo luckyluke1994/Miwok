@@ -4,9 +4,10 @@ package com.example.android.miwok;
  * Created by lucky_luke on 10/9/2016.
  */
 public class Word {
+    private static final int NO_IMAGE_PROVIDED = -1;
     private String mMiwokTranslation;
     private String mDefaultTranslation;
-    private int mImageResourceId;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
 
     public Word(String defaultTranslation, String miwokTranslation) {
         mMiwokTranslation = miwokTranslation;
@@ -37,5 +38,9 @@ public class Word {
 
     public int getImageResourceId() {
         return mImageResourceId;
+    }
+
+    public boolean hasImage() {
+        return mImageResourceId != NO_IMAGE_PROVIDED;
     }
 }
